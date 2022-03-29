@@ -7,6 +7,7 @@ const AddExpenseForm = (props) => {
 
 	const [name, setName] = useState('');
 	const [cost, setCost] = useState('');
+    const [date, setDate] = useState('');
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -47,6 +48,17 @@ const AddExpenseForm = (props) => {
 						class='form-control'
 						id='cost'
 						value={cost}
+						onChange={(event) => setCost(event.target.value)}
+					/>
+				</div>
+                <div class='col-sm col-lg-4'>
+					<label for='cost'>Date</label>
+					<input
+						required='required'
+						type='date'
+						class='form-control'
+						id='date'
+						value={date}
 						onChange={(event) => setCost(event.target.value)}
 					/>
 				</div>
