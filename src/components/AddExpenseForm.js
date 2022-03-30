@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 import { v4 as uuidv4 } from 'uuid';
+import { Add } from '@mui/icons-material';
 
 const AddExpenseForm = (props) => {
 	const { dispatch } = useContext(AppContext);
@@ -66,7 +67,7 @@ const AddExpenseForm = (props) => {
 			<div class='row mt-3'>
 				<div class='col-sm'>
 					<button type='submit' class='btn btn-primary'>
-						Save
+					 <Add/> Expense
 					</button>
 				</div>
 			</div>
