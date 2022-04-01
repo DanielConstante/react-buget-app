@@ -8,7 +8,7 @@ const AddExpenseForm = (props) => {
 
 	const [name, setName] = useState('');
 	const [cost, setCost] = useState('');
-    const [date, setDate] = useState('');
+    const [dueDate, setDueDate] = useState('');
 
 	const onSubmit = (event) => {
 		event.preventDefault();
@@ -16,6 +16,7 @@ const AddExpenseForm = (props) => {
 			id: uuidv4(),
 			name,
 			cost: parseInt(cost),
+			dueDate,
 		};
 
 		dispatch({
@@ -25,6 +26,7 @@ const AddExpenseForm = (props) => {
 
 		setName('');
 		setCost('');
+		setDueDate('');
 	};
 
 	return (
@@ -53,21 +55,21 @@ const AddExpenseForm = (props) => {
 					/>
 				</div>
                 <div class='col-sm col-lg-4'>
-					<label for='cost'>Date</label>
+					<label for='cost'>Due Date</label>
 					<input
 						required='required'
-						type='date'
+						type='text'
 						class='form-control'
-						id='date'
-						value={date}
-						onChange={(event) => setCost(event.target.value)}
+						id='dueDate'
+						value={dueDate}
+						onChange={(event) => setDueDate(event.target.value)}
 					/>
 				</div>
 			</div>
 			<div class='row mt-3'>
 				<div class='col-sm'>
 					<button type='submit' class='btn btn-primary'>
-					 <Add/> Expense
+					 <Add/> Add Expense
 					</button>
 				</div>
 			</div>
